@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Utensils, Flame, Compass, Clock, Award, Shield, HeartHandshake } from 'lucide-react';
+import { Compass, Flame, Utensils, Award, Clock, HeartHandshake, Sparkles } from 'lucide-react';
 
 export default function WhyChooseUs() {
   const reasons = [
@@ -37,19 +37,26 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 bg-ivory-dark/40 border-b border-borderLine">
+    <section className="py-24 bg-ivory border-b border-borderLine">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* SECTION TITLE & SUBHEADING */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block mb-2">
-            The Anandam Difference
-          </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-forest-dark mb-4">
+          <div className="inline-flex items-center space-x-2 text-gold mb-3">
+            <Sparkles className="w-4 h-4" />
+            <span className="text-xs uppercase tracking-[0.25em] font-dmsans font-semibold">
+              The Anandam Difference
+            </span>
+            <Sparkles className="w-4 h-4" />
+          </div>
+          <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl font-bold text-forest-dark tracking-tight mb-4">
             Why Discerning Guests Choose Us
           </h2>
-          <div className="w-16 h-0.5 bg-gold mx-auto" />
+          <div className="w-20 h-0.5 bg-gold-gradient mx-auto" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* CARDS GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((r, i) => {
             const Icon = r.icon;
             return (
@@ -59,16 +66,16 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="p-6 rounded-2xl bg-white border border-borderLine hover:border-gold/40 shadow-sm hover:shadow-luxury transition-all duration-300 flex items-start space-x-4"
+                className="p-8 rounded-3xl bg-white border border-gold/30 hover:border-gold shadow-md hover:shadow-cardHover transition-all duration-500 flex items-start space-x-5 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-forest/5 text-forest border border-forest/10 flex items-center justify-center shrink-0">
-                  <Icon className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-forest/5 text-forest border border-gold/40 flex items-center justify-center shrink-0 group-hover:bg-gold-gradient group-hover:text-forest-dark transition-all duration-500 shadow-sm">
+                  <Icon className="w-7 h-7" />
                 </div>
                 <div>
-                  <h3 className="font-playfair text-lg font-bold text-forest-dark mb-1">
+                  <h3 className="font-cormorant text-2xl font-bold text-forest-dark mb-2 group-hover:text-gold-dark transition-colors leading-tight">
                     {r.title}
                   </h3>
-                  <p className="text-mutedText text-xs sm:text-sm font-light leading-relaxed">
+                  <p className="text-darkText/80 font-inter text-xs sm:text-sm font-normal leading-relaxed">
                     {r.desc}
                   </p>
                 </div>
@@ -76,6 +83,7 @@ export default function WhyChooseUs() {
             );
           })}
         </div>
+
       </div>
     </section>
   );

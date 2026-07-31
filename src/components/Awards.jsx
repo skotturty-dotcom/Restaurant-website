@@ -1,68 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, ShieldCheck, Medal, Star } from 'lucide-react';
+import { Award, ShieldCheck, Trophy, Star } from 'lucide-react';
 
 export default function Awards() {
   const awards = [
     {
-      icon: Award,
+      icon: Trophy,
+      tag: '2025 Winner',
       title: 'Best South Indian Restaurant 2025',
-      organization: 'Australian Food & Dining Awards',
-      year: '2025 Winner'
+      organization: 'Australian Food & Dining Awards'
     },
     {
       icon: ShieldCheck,
+      tag: 'Grade A Certified',
       title: 'HACCP Safety & Hygiene',
-      organization: 'Victorian Department of Health',
-      year: 'Grade A Certified'
+      organization: 'Victorian Department of Health'
     },
     {
-      icon: Medal,
+      icon: Award,
+      tag: 'Top 10 Asian Fine Dining',
       title: 'Gourmet Traveller Choice',
-      organization: 'Australian Hospitality Guide',
-      year: 'Top 10 Asian Fine Dining'
+      organization: 'Australian Hospitality Guide'
     },
     {
       icon: Star,
+      tag: 'Gold Medalist',
       title: 'Excellence in Heritage Dining',
-      organization: 'Melbourne International Culinary Expo',
-      year: 'Gold Medalist'
+      organization: 'Melbourne International Culinary Expo'
     }
   ];
 
   return (
-    <section className="py-16 bg-forest-dark text-white border-b border-gold/20">
+    <section className="py-20 bg-ivory border-b border-borderLine">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {awards.map((a, i) => {
-            const Icon = a.icon;
+        
+        {/* CARDS GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {awards.map((item, idx) => {
+            const Icon = item.icon;
             return (
               <motion.div
-                key={i}
+                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-forest/40 border border-gold/20 hover:border-gold/50 transition-colors flex items-center space-x-4"
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="p-8 rounded-3xl bg-white border border-gold/30 hover:border-gold shadow-md hover:shadow-cardHover transition-all duration-500 flex items-start space-x-5 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-gold/10 text-gold border border-gold/30 flex items-center justify-center shrink-0">
-                  <Icon className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-forest/5 text-forest border border-gold/40 flex items-center justify-center shrink-0 group-hover:bg-gold-gradient group-hover:text-forest-dark transition-all duration-500 shadow-sm">
+                  <Icon className="w-7 h-7" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-gold block">
-                    {a.year}
+                  <span className="font-dmsans text-xs sm:text-sm font-bold text-gold-dark uppercase tracking-widest block mb-1">
+                    {item.tag}
                   </span>
-                  <h4 className="font-playfair text-sm font-bold text-white leading-tight">
-                    {a.title}
-                  </h4>
-                  <p className="text-gray-400 text-[11px] font-light mt-0.5">
-                    {a.organization}
+                  <h3 className="font-cormorant text-2xl sm:text-3xl font-bold text-forest-dark mb-2 group-hover:text-gold-dark transition-colors leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-darkText/80 font-inter text-xs sm:text-sm font-normal leading-relaxed">
+                    {item.organization}
                   </p>
                 </div>
               </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

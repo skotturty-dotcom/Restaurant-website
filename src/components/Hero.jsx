@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Clock, Calendar, Utensils, MapPin, ChevronDown, Maximize2, X, Sparkles, ArrowRight, Award } from 'lucide-react';
+import { Star, Clock, Calendar, Utensils, MapPin, Maximize2, X, Sparkles, ArrowRight } from 'lucide-react';
 
 export default function Hero({ onOpenReservation }) {
   const [showFullMural, setShowFullMural] = useState(false);
@@ -45,34 +45,34 @@ export default function Hero({ onOpenReservation }) {
           The Flavours of <span className="text-gold-gradient italic font-playfair">South India</span> in Australia
         </motion.h1>
 
-        {/* 3. FULL HORIZONTAL WIDESCREEN MURAL IMAGE BOX (PLACED UP HERE) */}
+        {/* 3. FULL HORIZONTAL WIDESCREEN MURAL IMAGE BOX (UP HERE - CRISP & HIGH VISIBILITY) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="w-full max-w-5xl mb-8 relative"
         >
-          <div className="relative rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl group bg-forest-deep aspect-[16/9] sm:h-[460px] w-full">
+          <div className="relative rounded-3xl overflow-hidden border-2 border-gold/40 shadow-cardHover group bg-forest-deep aspect-[16/9] sm:h-[480px] w-full">
             <img
               src="/images/hero_mural.png"
-              alt="The Flavours of South India Full Widescreen Mural Wall"
-              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-100 contrast-[1.02]"
+              alt="The Flavours of South India Full Widescreen Entrance Mural"
+              className="w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700 filter brightness-[1.02] contrast-[1.03]"
             />
 
-            {/* OVERLAY CAPTION BAR AT BOTTOM */}
-            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t from-forest-deep via-forest-deep/80 to-transparent flex items-center justify-between font-dmsans">
+            {/* LIGHT BOTTOM CAPTION STRIP FOR 100% UNBLURRED ARTWORK VISIBILITY */}
+            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent flex items-center justify-between font-dmsans">
               <div className="text-left">
                 <span className="text-[10px] uppercase font-mono tracking-widest text-gold block">
                   Authentic South Indian Heritage Wall Artwork
                 </span>
-                <h4 className="font-cormorant text-xl sm:text-2xl font-bold text-white leading-tight">
+                <h4 className="font-cormorant text-lg sm:text-xl font-bold text-white leading-tight">
                   "THE FLAVOURS OF SOUTH INDIA — MADE WITH LOVE, SHARED WITH JOY"
                 </h4>
               </div>
 
               <button
                 onClick={() => setShowFullMural(true)}
-                className="p-3.5 rounded-full bg-gold/20 hover:bg-gold text-gold hover:text-forest-dark border border-gold/40 transition-colors shadow-2xl shrink-0"
+                className="p-3 rounded-full bg-gold/20 hover:bg-gold text-gold hover:text-forest-dark border border-gold/40 transition-colors shadow-2xl shrink-0"
                 title="Expand Full Resolution Mural Artwork"
               >
                 <Maximize2 className="w-4 h-4" />

@@ -15,7 +15,7 @@ export default function Hero({ onOpenReservation }) {
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-gold/10 rounded-full filter blur-[120px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-terracotta/10 rounded-full filter blur-[120px] pointer-events-none" />
 
-      {/* MAIN HERO CONTAINER (STACKED WITH WIDESCREEN HORIZONTAL MURAL BOX) */}
+      {/* MAIN HERO CONTAINER */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white my-auto flex flex-col items-center">
         
         {/* 1. TOP GOLD BADGE */}
@@ -23,7 +23,7 @@ export default function Hero({ onOpenReservation }) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center space-x-2.5 px-5 py-2 rounded-full border border-gold/40 bg-forest-dark/85 backdrop-blur-md mb-6 shadow-2xl"
+          className="inline-flex items-center space-x-2.5 px-5 py-2 rounded-full border border-gold/40 bg-forest-dark/85 backdrop-blur-md mb-4 shadow-2xl"
         >
           <Sparkles className="w-4 h-4 text-gold animate-spin" />
           <span className="text-xs uppercase tracking-[0.25em] text-gold font-dmsans font-bold">
@@ -40,52 +40,17 @@ export default function Hero({ onOpenReservation }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-cormorant text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] text-white max-w-4xl mx-auto mb-4 drop-shadow-[0_4px_25px_rgba(0,0,0,0.9)]"
+          className="font-cormorant text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] text-white max-w-4xl mx-auto mb-6 drop-shadow-[0_4px_25px_rgba(0,0,0,0.9)]"
         >
           The Flavours of <span className="text-gold-gradient italic font-playfair">South India</span> in Australia
         </motion.h1>
 
-        {/* 3. SUBHEADLINE QUOTE */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-200 font-inter font-light leading-relaxed mb-8 bg-forest-dark/70 backdrop-blur-md px-6 py-3.5 rounded-2xl border border-gold/20 shadow-2xl"
-        >
-          "From the rich traditions of South India to the vibrant tables of Australia—bringing you authentic flavours, warm hospitality, and memories to cherish."
-        </motion.p>
-
-        {/* 4. ACTION BUTTONS ROW */}
+        {/* 3. FULL HORIZONTAL WIDESCREEN MURAL IMAGE BOX (PLACED UP HERE) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 w-full sm:w-auto"
-        >
-          <button
-            onClick={onOpenReservation}
-            className="w-full sm:w-auto px-9 py-4 rounded-full bg-gold-gradient text-forest-dark font-dmsans font-bold text-xs uppercase tracking-widest hover:shadow-goldGlow transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3 shadow-2xl"
-          >
-            <Calendar className="w-4 h-4 text-forest-dark" />
-            <span>Book A Table</span>
-          </button>
-
-          <a
-            href="#menu"
-            className="w-full sm:w-auto px-9 py-4 rounded-full bg-forest-dark/90 backdrop-blur-md border border-gold/50 text-gold hover:bg-gold hover:text-forest-dark font-dmsans font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center space-x-3 shadow-2xl group"
-          >
-            <Utensils className="w-4 h-4" />
-            <span>Explore Menu</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </motion.div>
-
-        {/* 5. FULL HORIZONTAL (WIDESCREEN 16:9) FEATURED MURAL BOX */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-full max-w-5xl mb-12 relative"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="w-full max-w-5xl mb-8 relative"
         >
           <div className="relative rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl group bg-forest-deep aspect-[16/9] sm:h-[460px] w-full">
             <img
@@ -115,17 +80,52 @@ export default function Hero({ onOpenReservation }) {
             </div>
           </div>
 
-          {/* FLOATING CORNER BADGES */}
-          <div className="absolute -top-4 left-6 px-4 py-1.5 rounded-full bg-forest-dark border border-gold/40 text-gold text-[11px] font-mono uppercase tracking-widest shadow-lg hidden sm:block">
+          {/* FLOATING CORNER BADGE */}
+          <div className="absolute -top-3 left-6 px-4 py-1 rounded-full bg-forest-dark border border-gold/40 text-gold text-[11px] font-mono uppercase tracking-widest shadow-lg hidden sm:block">
             ✨ Handcrafted Entrance Mural
           </div>
         </motion.div>
 
+        {/* 4. SUBHEADLINE QUOTE */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-200 font-inter font-light leading-relaxed mb-6 bg-forest-dark/70 backdrop-blur-md px-6 py-3.5 rounded-2xl border border-gold/20 shadow-2xl"
+        >
+          "From the rich traditions of South India to the vibrant tables of Australia—bringing you authentic flavours, warm hospitality, and memories to cherish."
+        </motion.p>
+
+        {/* 5. ACTION BUTTONS ROW */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 w-full sm:w-auto"
+        >
+          <button
+            onClick={onOpenReservation}
+            className="w-full sm:w-auto px-9 py-4 rounded-full bg-gold-gradient text-forest-dark font-dmsans font-bold text-xs uppercase tracking-widest hover:shadow-goldGlow transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3 shadow-2xl"
+          >
+            <Calendar className="w-4 h-4 text-forest-dark" />
+            <span>Book A Table</span>
+          </button>
+
+          <a
+            href="#menu"
+            className="w-full sm:w-auto px-9 py-4 rounded-full bg-forest-dark/90 backdrop-blur-md border border-gold/50 text-gold hover:bg-gold hover:text-forest-dark font-dmsans font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center space-x-3 shadow-2xl group"
+          >
+            <Utensils className="w-4 h-4" />
+            <span>Explore Menu</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </motion.div>
+
         {/* 6. FLOATING STATS BAR */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-4xl mx-auto"
         >
           {/* RATING BADGE */}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, ArrowUp, Calendar, Phone, Heart } from 'lucide-react';
+import { MessageSquare, ArrowUp } from 'lucide-react';
 
 export default function FloatingWidgets({ onOpenReservation, wishlistCount, onOpenWishlist }) {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -67,15 +67,6 @@ export default function FloatingWidgets({ onOpenReservation, wishlistCount, onOp
         >
           <MessageSquare className="w-5 h-5 fill-white" />
         </a>
-
-        {/* FLOATING STICKY BOOK TABLE BUTTON */}
-        <button
-          onClick={onOpenReservation}
-          className="px-5 py-3 rounded-full bg-gold-gradient text-forest-dark font-bold text-xs uppercase tracking-wider shadow-goldGlow hover:scale-105 transition-all flex items-center space-x-2 border border-gold"
-        >
-          <Calendar className="w-4 h-4" />
-          <span className="hidden sm:inline">Book A Table</span>
-        </button>
 
       </div>
     </>

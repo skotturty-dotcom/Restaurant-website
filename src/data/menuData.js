@@ -5,7 +5,7 @@ export const menuCategories = [
   { id: 'rice', name: 'Flavoured Rice' },
   { id: 'curries', name: 'Special Curries' },
   { id: 'desserts', name: 'Traditional Desserts' },
-  { id: 'beverages', name: 'Artisan Beverages' },
+  { id: 'beverages', name: 'Beverages' },
   { id: 'kids', name: 'Kids Special' },
 ];
 

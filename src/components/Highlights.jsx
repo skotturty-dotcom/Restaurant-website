@@ -55,7 +55,7 @@ export default function Highlights() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 text-gold mb-3">
             <Sparkles className="w-5 h-5" />
-            <span className="text-sm sm:text-base uppercase tracking-[0.2em] font-dmsans font-bold">
+            <span className="text-sm sm:text-base uppercase tracking-[0.2em] font-dmsans font-bold text-gold">
               Pillars of Excellence
             </span>
             <Sparkles className="w-5 h-5" />
@@ -69,7 +69,7 @@ export default function Highlights() {
           </p>
         </div>
 
-        {/* ELEGANT LIGHT & LUXURY CARDS GRID */}
+        {/* HIGHLIGHTED WHITE CARDS WITH RICH GREEN BORDERS & TOP ACCENT BAR */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {highlights.map((item, idx) => {
             const Icon = item.icon;
@@ -80,18 +80,18 @@ export default function Highlights() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="relative rounded-3xl bg-white text-darkText p-8 border border-gold/30 hover:border-gold shadow-md hover:shadow-cardHover transition-all duration-500 group flex flex-col justify-between overflow-hidden"
+                className="relative rounded-3xl bg-white text-darkText p-8 border-2 border-forest/40 hover:border-forest shadow-md hover:shadow-cardHover transition-all duration-500 group flex flex-col justify-between overflow-hidden"
               >
-                {/* TOP GOLD METALLIC ACCENT BAR */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gold-gradient opacity-90 group-hover:opacity-100 transition-opacity" />
+                {/* TOP METALLIC GREEN & GOLD ACCENT BAR */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-forest via-gold to-forest-dark opacity-90 group-hover:opacity-100 transition-opacity" />
 
                 <div>
                   {/* TOP HEADER ROW: ICON & NUMBER */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-forest/5 border border-gold/40 flex items-center justify-center text-forest group-hover:bg-gold-gradient group-hover:text-forest-dark group-hover:border-gold transition-all duration-500 shadow-sm">
+                    <div className="w-14 h-14 rounded-2xl bg-forest text-gold border border-gold/40 flex items-center justify-center group-hover:bg-gold-gradient group-hover:text-forest-dark transition-all duration-500 shadow-md group-hover:scale-110">
                       <Icon className="w-7 h-7" />
                     </div>
-                    <span className="font-mono text-2xl font-bold text-gold-dark/40 group-hover:text-gold-dark transition-colors">
+                    <span className="font-mono text-2xl font-bold text-forest/40 group-hover:text-forest transition-colors">
                       {item.number}
                     </span>
                   </div>
@@ -107,9 +107,9 @@ export default function Highlights() {
                 </div>
 
                 {/* BOTTOM DECORATIVE CORNER ACCENT */}
-                <div className="pt-6 mt-6 border-t border-borderLine flex items-center justify-between text-[11px] font-mono text-gold-dark uppercase tracking-widest">
+                <div className="pt-6 mt-6 border-t border-forest/15 flex items-center justify-between text-[11px] font-mono text-forest font-bold uppercase tracking-widest">
                   <span>Anandam Australia</span>
-                  <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-forest animate-pulse" />
                 </div>
               </motion.div>
             );

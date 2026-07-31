@@ -45,9 +45,12 @@ export default function Awards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-8 rounded-3xl bg-white border border-gold/30 hover:border-gold shadow-md hover:shadow-cardHover transition-all duration-500 flex items-start space-x-5 group"
+                className="relative p-8 rounded-3xl bg-white border-2 border-forest/40 hover:border-forest shadow-md hover:shadow-cardHover transition-all duration-500 flex items-start space-x-5 group overflow-hidden"
               >
-                <div className="w-14 h-14 rounded-2xl bg-forest/5 text-forest border border-gold/40 flex items-center justify-center shrink-0 group-hover:bg-gold-gradient group-hover:text-forest-dark transition-all duration-500 shadow-sm">
+                {/* TOP METALLIC ACCENT BAR */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-forest via-gold to-forest-dark opacity-90" />
+
+                <div className="w-14 h-14 rounded-2xl bg-forest text-gold border border-gold/40 flex items-center justify-center shrink-0 group-hover:bg-gold-gradient group-hover:text-forest-dark transition-all duration-500 shadow-md group-hover:scale-110">
                   <Icon className="w-7 h-7" />
                 </div>
                 <div>

@@ -35,8 +35,8 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-forest-dark/95 backdrop-blur-md border-b border-gold/20 py-3.5 shadow-2xl'
-            : 'bg-gradient-to-b from-forest-dark/90 via-forest-dark/50 to-transparent py-5'
+            ? 'bg-forest-dark/95 backdrop-blur-md border-b border-gold/20 py-3 shadow-luxury'
+            : 'bg-gradient-to-b from-forest-deep/80 via-forest-deep/40 to-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,26 +44,26 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
             
             {/* LOGO */}
             <a href="#home" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 rounded-full border border-gold/50 flex items-center justify-center bg-forest-light/40 group-hover:border-gold transition-colors shadow-md">
+              <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center bg-forest-light/30 group-hover:border-gold transition-colors">
                 <span className="text-gold font-playfair text-xl font-bold">A</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-playfair text-2xl font-bold tracking-widest text-white group-hover:text-gold transition-colors drop-shadow-md">
+                <span className="font-playfair text-2xl font-bold tracking-widest text-white group-hover:text-gold transition-colors">
                   ANANDAM
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-gold font-dmsans font-bold">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-gold-light/90 font-dmsans">
                   South Indian Fine Dining
                 </span>
               </div>
             </a>
 
             {/* DESKTOP NAV LINKS */}
-            <nav className="hidden lg:flex items-center space-x-7 font-dmsans">
+            <nav className="hidden lg:flex items-center space-x-7">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-xs uppercase tracking-widest text-white hover:text-gold font-semibold transition-colors duration-200 relative group py-1 drop-shadow-sm"
+                  className="text-xs uppercase tracking-widest text-gray-200 hover:text-gold transition-colors duration-200 relative group py-1"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold transition-all duration-300 group-hover:w-full"></span>
@@ -72,11 +72,11 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
             </nav>
 
             {/* RIGHT UTILITIES & CTA */}
-            <div className="hidden lg:flex items-center space-x-5 font-dmsans">
+            <div className="hidden lg:flex items-center space-x-5">
               {/* WISHLIST BUTTON */}
               <button
                 onClick={onOpenWishlist}
-                className="relative p-2.5 rounded-full border border-gold/40 bg-forest-dark/60 backdrop-blur-md text-gold hover:bg-gold/20 transition-colors shadow-md"
+                className="relative p-2.5 rounded-full border border-gold/30 text-gold hover:bg-gold/10 transition-colors"
                 aria-label="Wishlist"
               >
                 <Heart className="w-5 h-5" />
@@ -90,7 +90,7 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
               {/* BOOK TABLE BUTTON */}
               <button
                 onClick={onOpenReservation}
-                className="px-6 py-2.5 rounded-full bg-gold-gradient text-forest-dark font-bold text-xs uppercase tracking-wider hover:shadow-goldGlow transition-all duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2 shadow-lg"
+                className="px-6 py-2.5 rounded-full bg-gold-gradient text-forest-dark font-medium text-xs uppercase tracking-wider hover:shadow-goldGlow transition-all duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2"
               >
                 <Calendar className="w-4 h-4 text-forest-dark" />
                 <span>Book Table</span>
@@ -132,7 +132,7 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-[68px] z-40 bg-forest-dark/98 backdrop-blur-xl border-b border-gold/20 lg:hidden shadow-2xl overflow-hidden font-dmsans"
+            className="fixed inset-x-0 top-[68px] z-40 bg-forest-dark/98 backdrop-blur-xl border-b border-gold/20 lg:hidden shadow-2xl overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col space-y-5">
               {navLinks.map((link) => (
@@ -140,7 +140,7 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between text-sm uppercase tracking-widest text-gray-200 hover:text-gold py-2 border-b border-gray-800 font-semibold"
+                  className="flex items-center justify-between text-sm uppercase tracking-widest text-gray-200 hover:text-gold py-2 border-b border-gray-800"
                 >
                   <span>{link.name}</span>
                   <ChevronRight className="w-4 h-4 text-gold/60" />
@@ -153,7 +153,7 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
                     setMobileMenuOpen(false);
                     onOpenReservation();
                   }}
-                  className="w-full py-3.5 rounded-full bg-gold-gradient text-forest-dark font-bold text-xs uppercase tracking-widest shadow-goldGlow text-center block flex items-center justify-center space-x-2"
+                  className="w-full py-3.5 rounded-full bg-gold-gradient text-forest-dark font-semibold text-xs uppercase tracking-widest shadow-goldGlow text-center block flex items-center justify-center space-x-2"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Reserve a Table</span>
@@ -161,7 +161,7 @@ export default function Navbar({ onOpenReservation, wishlistCount, onOpenWishlis
 
                 <a
                   href="tel:+61398274500"
-                  className="w-full py-3 rounded-full border border-gold/40 text-gold font-bold text-xs uppercase tracking-widest text-center flex items-center justify-center space-x-2 hover:bg-gold/10"
+                  className="w-full py-3 rounded-full border border-gold/40 text-gold text-xs uppercase tracking-widest text-center flex items-center justify-center space-x-2 hover:bg-gold/10"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call +61 3 9827 4500</span>

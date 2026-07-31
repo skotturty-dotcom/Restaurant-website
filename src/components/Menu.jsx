@@ -16,7 +16,6 @@ export default function Menu({ dishes, onQuickView, wishlist, onToggleWishlist }
         dish.description.toLowerCase().includes(searchQuery.toLowerCase());
       
       let matchesDietary = true;
-      if (dietaryFilter === 'glutenFree') matchesDietary = dish.isGlutenFree;
       if (dietaryFilter === 'chefSpecial') matchesDietary = dish.badge === 'Chef Special' || dish.badge === 'Signature Experience';
 
       return matchesCategory && matchesSearch && matchesDietary;
@@ -75,7 +74,6 @@ export default function Menu({ dishes, onQuickView, wishlist, onToggleWishlist }
             </span>
             {[
               { id: 'all', label: 'All Items' },
-              { id: 'glutenFree', label: 'Gluten-Free' },
               { id: 'chefSpecial', label: 'Chef Specials' },
             ].map((f) => (
               <button

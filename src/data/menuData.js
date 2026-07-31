@@ -4,7 +4,6 @@ export const menuCategories = [
   { id: 'meals', name: 'Royal Meals & Thalis' },
   { id: 'rice', name: 'Flavoured Rice' },
   { id: 'curries', name: 'Special Curries' },
-  { id: 'breads', name: 'Artisanal Breads' },
   { id: 'desserts', name: 'Traditional Desserts' },
   { id: 'beverages', name: 'Artisan Beverages' },
   { id: 'kids', name: 'Kids Special' },

@@ -30,7 +30,7 @@ export const reviewsData = [
     date: '2 weeks ago',
     verified: true,
     dishVisited: 'Chettinad Mushroom & Tender Coconut Payasam',
-    review: 'The design language is stunning—dark forest greens and subtle brass tones create a serene high-end vibe. The Chettinad spice profile was deeply layered without overwhelming heat. Outstanding service and cocktail/wine pairings.',
+    review: 'The design language is stunning—dark forest greens and subtle brass tones create a serene high-end vibe. The Chettinad spice profile was deeply layered without overwhelming heat. Outstanding service and artisanal beverage pairings.',
   },
   {
     id: 'r-4',
@@ -41,6 +41,6 @@ export const reviewsData = [
     date: '3 weeks ago',
     verified: true,
     dishVisited: 'Private Dining Room Event',
-    review: 'Hosted a private corporate dinner for 16 guests in their Private Dining Room. The bespoke menu curation, banana leaf service presentation, and sommelier recommendations blew all our guests away. 10/10 recommendation.',
+    review: 'Hosted a private corporate dinner for 16 guests in their Private Dining Suite. The bespoke menu curation, banana leaf service presentation, and artisanal spice drink pairings blew all our guests away. 10/10 recommendation.',
   }
 ];

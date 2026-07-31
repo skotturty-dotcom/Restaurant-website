@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Wine, Shield, Calendar } from 'lucide-react';
+import { Users, GlassWater, Shield, Calendar } from 'lucide-react';
 
 export default function PrivateDining({ onOpenReservation }) {
   return (
@@ -19,16 +19,16 @@ export default function PrivateDining({ onOpenReservation }) {
             <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">
               Exclusive Sanctuary
             </span>
-            <h2 className="font-playfair text-3xl sm:text-5xl font-bold leading-tight">
+            <h2 className="font-cormorant text-3xl sm:text-5xl font-bold leading-tight">
               The Sovereign <br />
               <span className="text-gold-gradient">Private Dining Suite</span>
             </h2>
 
-            <p className="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
-              Designed for high-profile guests, VIP family gatherings, and executive corporate meetings. Features acoustic insulation, custom brass chandelier lighting, and a private sommelier service.
+            <p className="text-gray-300 font-light text-sm sm:text-base leading-relaxed font-inter">
+              Designed for high-profile guests, VIP family gatherings, and executive corporate meetings. Features acoustic insulation, custom brass chandelier lighting, and dedicated butler service.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 font-dmsans">
               <div className="p-4 rounded-2xl bg-forest-dark border border-gold/20 text-center">
                 <Users className="w-6 h-6 text-gold mx-auto mb-1" />
                 <span className="text-white font-bold text-sm block">Up to 24 Guests</span>
@@ -36,9 +36,9 @@ export default function PrivateDining({ onOpenReservation }) {
               </div>
 
               <div className="p-4 rounded-2xl bg-forest-dark border border-gold/20 text-center">
-                <Wine className="w-6 h-6 text-gold mx-auto mb-1" />
-                <span className="text-white font-bold text-sm block">Organic Wine Pairings</span>
-                <span className="text-[10px] text-gray-400">Curated Cellar</span>
+                <GlassWater className="w-6 h-6 text-gold mx-auto mb-1" />
+                <span className="text-white font-bold text-sm block">Artisanal Beverage Pairings</span>
+                <span className="text-[10px] text-gray-400">Kokum & Spice Coolers</span>
               </div>
 
               <div className="p-4 rounded-2xl bg-forest-dark border border-gold/20 text-center">
@@ -48,10 +48,10 @@ export default function PrivateDining({ onOpenReservation }) {
               </div>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 font-dmsans">
               <button
                 onClick={onOpenReservation}
-                className="px-8 py-4 rounded-full bg-gold-gradient text-forest-dark font-bold text-xs uppercase tracking-widest hover:shadow-goldGlow transition-all duration-300 flex items-center space-x-2"
+                className="px-8 py-4 rounded-full bg-gold-gradient text-forest-dark font-bold text-xs uppercase tracking-widest hover:shadow-goldGlow transition-all duration-300 flex items-center space-x-2 shadow-xl"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Reserve Private Suite</span>

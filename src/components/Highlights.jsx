@@ -54,17 +54,17 @@ export default function Highlights() {
         {/* SECTION TITLE */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 text-gold mb-3">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-xs uppercase tracking-[0.3em] font-semibold">
+            <Sparkles className="w-5 h-5" />
+            <span className="text-sm sm:text-base uppercase tracking-[0.2em] font-dmsans font-bold">
               Pillars of Excellence
             </span>
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-5 h-5" />
           </div>
           <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl font-bold text-forest-dark tracking-tight mb-4">
             Why Dining at Anandam is Extraordinary
           </h2>
           <div className="w-20 h-0.5 bg-gold-gradient mx-auto mb-4" />
-          <p className="text-mutedText font-inter font-light text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="text-darkText/80 font-inter font-normal text-sm sm:text-base max-w-2xl mx-auto">
             Combining authentic culinary traditions from Tamil Nadu, Kerala, Andhra & Karnataka with Australia's finest organic ingredients.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function Highlights() {
                     {item.title}
                   </h3>
 
-                  <p className="text-mutedText text-xs sm:text-sm font-inter font-light leading-relaxed">
+                  <p className="text-darkText/80 text-xs sm:text-sm font-inter font-normal leading-relaxed">
                     {item.description}
                   </p>
                 </div>

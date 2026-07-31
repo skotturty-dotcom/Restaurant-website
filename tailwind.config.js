@@ -34,8 +34,9 @@ export default {
         borderLine: '#E8E3DA',
       },
       fontFamily: {
-        playfair: ['Playfair Display', 'serif'],
         cormorant: ['Cormorant Garamond', 'serif'],
+        cinzel: ['Cinzel', 'serif'],
+        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         dmsans: ['DM Sans', 'sans-serif'],
       },

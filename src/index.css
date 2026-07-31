@@ -10,8 +10,9 @@
   }
 
   h1, h2, h3, h4, .font-heading {
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', 'Cinzel', serif;
     letter-spacing: -0.01em;
+    font-weight: 700;
   }
 }
 

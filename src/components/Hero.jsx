@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Clock, Calendar, Utensils, MapPin, ChevronLeft, ChevronRight, Sparkles, ArrowRight, Eye } from 'lucide-react';
+import { Star, Clock, Calendar, Utensils, MapPin, ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 
 export default function Hero({ onOpenReservation, onQuickView, dishes }) {
   // HERO SLIDES DATA WITH DISH PHOTOGRAPHY
@@ -92,7 +92,7 @@ export default function Hero({ onOpenReservation, onQuickView, dishes }) {
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-gold/10 rounded-full filter blur-[120px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-terracotta/10 rounded-full filter blur-[120px] pointer-events-none" />
 
-      {/* MAIN HERO CONTAINER (SIDE-BY-SIDE SPLIT LAYOUT WITH ANIMATED DISH CAROUSEL) */}
+      {/* MAIN HERO CONTAINER */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -191,13 +191,13 @@ export default function Hero({ onOpenReservation, onQuickView, dishes }) {
 
           </div>
 
-          {/* RIGHT COLUMN: ANIMATED DISH SHOWCASE CAROUSEL (5 COLS) */}
+          {/* RIGHT COLUMN: PERFECTLY CIRCULAR DISH SHOWCASE (5 COLS) */}
           <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
             
             {/* PREV & NEXT FLOATING NAV BUTTONS */}
             <button
               onClick={handlePrev}
-              className="absolute -left-5 z-30 p-3.5 rounded-full bg-forest-dark/90 hover:bg-gold text-gold hover:text-forest-dark border border-gold/40 transition-all shadow-2xl hover:scale-110"
+              className="absolute -left-4 sm:-left-6 z-30 p-3.5 rounded-full bg-forest-dark/90 hover:bg-gold text-gold hover:text-forest-dark border border-gold/50 transition-all shadow-2xl hover:scale-110"
               aria-label="Previous Slide"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -205,35 +205,35 @@ export default function Hero({ onOpenReservation, onQuickView, dishes }) {
 
             <button
               onClick={handleNext}
-              className="absolute -right-5 z-30 p-3.5 rounded-full bg-forest-dark/90 hover:bg-gold text-gold hover:text-forest-dark border border-gold/40 transition-all shadow-2xl hover:scale-110"
+              className="absolute -right-4 sm:-right-6 z-30 p-3.5 rounded-full bg-forest-dark/90 hover:bg-gold text-gold hover:text-forest-dark border border-gold/50 transition-all shadow-2xl hover:scale-110"
               aria-label="Next Slide"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* FEATURED FLOATING DISH DISPLAY CARD */}
-            <div className="relative w-full aspect-square max-w-[420px] rounded-full flex items-center justify-center bg-gradient-to-br from-gold/20 via-forest-deep to-forest-dark border-2 border-gold/40 shadow-cardHover overflow-hidden p-6 group">
+            {/* PERFECT CIRCULAR DISH DISPLAY FRAME */}
+            <div className="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full border-4 border-gold/40 shadow-cardHover bg-forest-deep overflow-hidden flex items-center justify-center group p-1">
               
-              {/* ANIMATED ROTATING DISH IMAGE */}
+              {/* ANIMATED DISH IMAGE FITTING COMPLETELY INSIDE THE CIRCLE */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide.id}
-                  initial={{ opacity: 0, scale: 0.85, rotate: -8 }}
+                  initial={{ opacity: 0, scale: 0.9, rotate: -6 }}
                   animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                  exit={{ opacity: 0, scale: 1.1, rotate: 8 }}
+                  exit={{ opacity: 0, scale: 1.08, rotate: 6 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="w-full h-full flex items-center justify-center"
+                  className="w-full h-full rounded-full overflow-hidden flex items-center justify-center"
                 >
                   <img
                     src={currentSlide.image}
                     alt={currentSlide.title}
-                    className="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center rounded-full group-hover:scale-105 transition-transform duration-700"
                   />
                 </motion.div>
               </AnimatePresence>
 
               {/* DISH TAG BADGE OVERLAY */}
-              <div className="absolute top-6 right-6 px-3.5 py-1 rounded-full bg-forest-dark/90 backdrop-blur-md border border-gold/40 text-gold text-[10px] font-mono uppercase tracking-widest shadow-xl">
+              <div className="absolute top-5 right-5 z-20 px-3.5 py-1 rounded-full bg-forest-dark/90 backdrop-blur-md border border-gold/50 text-gold text-[10px] font-mono uppercase tracking-widest shadow-2xl">
                 {currentSlide.tag}
               </div>
             </div>
